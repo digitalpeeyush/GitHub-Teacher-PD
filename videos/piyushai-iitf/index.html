@@ -100,7 +100,7 @@
         align-items: center;
         justify-content: center;
         padding: 260px 80px 460px;
-        gap: 36px;
+        gap: 34px;
         text-align: center;
       }
       .grad {
@@ -109,123 +109,147 @@
         background-clip: text;
         color: transparent;
       }
-
-      /* Scene 1 — brand */
-      #s1-mark {
-        width: 200px;
-        height: 200px;
+      .kicker {
+        font-size: 50px;
+        font-weight: 800;
+        color: var(--muted);
       }
-      #s1-name {
-        font-size: 170px;
+      .card {
+        border-radius: 36px;
+        background: var(--card);
+        border: 3px solid var(--line);
+      }
+      .mark {
+        width: 180px;
+        height: 180px;
+      }
+      .brand {
+        font-size: 160px;
         font-weight: 900;
         line-height: 1;
         letter-spacing: -0.03em;
       }
-      #s1-name .ai {
+      .brand .ai {
         color: var(--cyan);
       }
-      #s1-coming {
-        font-size: 60px;
+
+      /* Hook */
+      #h-icon {
+        width: 220px;
+        height: 180px;
+      }
+      #h-ai {
+        font-size: 280px;
+        font-weight: 900;
+        line-height: 0.9;
+      }
+      .h-line {
+        font-size: 76px;
         font-weight: 800;
-        letter-spacing: 0.12em;
-        color: var(--muted);
+        line-height: 1.1;
+      }
+      #h-easy {
+        font-size: 112px;
+        font-weight: 900;
+        color: var(--cyan);
       }
 
-      /* Scene 2 — venue */
-      #s2-kicker {
-        font-size: 40px;
-        font-weight: 700;
-        letter-spacing: 0.3em;
-        color: var(--saffron);
-      }
-      .s2-line {
-        display: block;
-        font-size: 104px;
+      /* Future */
+      #f-edu {
+        font-size: 96px;
         font-weight: 900;
-        line-height: 1.02;
+        line-height: 1;
+      }
+      #f-future {
+        font-size: 210px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+      #f-exp {
+        font-size: 60px;
+        font-weight: 800;
+      }
+      #f-bar {
+        width: 640px;
+        height: 16px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
+        transform-origin: left center;
+      }
+
+      /* Brand + IITF */
+      #b-coming {
+        font-size: 58px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+      .b-line {
+        display: block;
+        font-size: 92px;
+        font-weight: 900;
+        line-height: 1.04;
         white-space: nowrap;
       }
-      #s2-venue {
+      #b-year {
+        padding: 14px 48px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--saffron), #ffb85c);
+        color: #111111;
+        font-size: 64px;
+        font-weight: 900;
+      }
+
+      /* Dates */
+      #d-cal {
+        width: 600px;
+        overflow: hidden;
+      }
+      #d-cal-top {
+        padding: 24px 0;
+        background: linear-gradient(90deg, var(--violet), var(--pink));
+        font-size: 60px;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+      }
+      #d-cal-days {
+        padding: 26px 0 8px;
+        font-size: 180px;
+        font-weight: 900;
+        line-height: 1;
+      }
+      #d-cal-year {
+        padding-bottom: 30px;
+        font-size: 52px;
+        font-weight: 800;
+        color: var(--muted);
+      }
+      #d-venue {
         display: flex;
         align-items: center;
         gap: 22px;
         padding: 24px 40px;
         border-radius: 999px;
-        background: var(--card);
-        border: 3px solid var(--line);
         font-size: 46px;
         font-weight: 800;
         white-space: nowrap;
       }
-      #s2-pin {
+      #d-pin {
         width: 56px;
         height: 70px;
         flex: none;
       }
 
-      /* Scene 3 — dates */
-      #s3-cal {
-        width: 620px;
-        border-radius: 44px;
-        overflow: hidden;
-        background: var(--card);
-        border: 3px solid var(--line);
-      }
-      #s3-cal-top {
-        padding: 26px 0;
-        background: linear-gradient(90deg, var(--violet), var(--pink));
-        font-size: 64px;
-        font-weight: 900;
-        letter-spacing: 0.2em;
-      }
-      #s3-cal-days {
-        padding: 30px 0 10px;
-        font-size: 190px;
-        font-weight: 900;
-        line-height: 1;
-      }
-      #s3-cal-year {
-        padding-bottom: 34px;
-        font-size: 54px;
-        font-weight: 800;
-        color: var(--muted);
-      }
-      #s3-chips {
-        display: flex;
-        gap: 18px;
-      }
-      .chip {
-        width: 128px;
-        padding: 18px 0;
-        border-radius: 24px;
-        background: var(--card);
-        border: 3px solid var(--cyan);
-        font-size: 30px;
-        font-weight: 700;
-        color: var(--muted);
-      }
-      .chip b {
-        display: block;
-        font-size: 52px;
-        font-weight: 900;
-        color: var(--ink);
-      }
-
-      /* Scene 4 — Hall 14 */
-      #s4-kicker {
-        font-size: 50px;
-        font-weight: 800;
-        letter-spacing: 0.1em;
-        color: var(--muted);
-      }
-      #s4-grid {
+      /* Hall */
+      #hl-grid {
         display: grid;
-        grid-template-columns: repeat(4, 170px);
-        gap: 22px;
+        grid-template-columns: repeat(4, 150px);
+        gap: 20px;
       }
       .tile {
-        height: 120px;
-        border-radius: 22px;
+        height: 100px;
+        border-radius: 20px;
         background: rgba(184, 192, 230, 0.08);
         border: 2px solid rgba(184, 192, 230, 0.18);
       }
@@ -235,42 +259,53 @@
         justify-content: center;
         background: linear-gradient(135deg, var(--cyan), var(--violet));
         border: none;
-        font-size: 64px;
+        font-size: 56px;
         font-weight: 900;
         box-shadow: 0 0 60px rgba(34, 211, 238, 0.6);
       }
-      #s4-hall {
-        font-size: 200px;
+      #hl-hall {
+        font-size: 180px;
         font-weight: 900;
         line-height: 1;
       }
-
-      /* Scene 5 — platform demo */
-      #s5-title {
-        font-size: 66px;
+      #hl-platform {
+        padding: 24px 44px;
+        font-size: 48px;
         font-weight: 900;
-        line-height: 1.15;
+        white-space: nowrap;
       }
-      #s5-phone {
-        width: 700px;
-        height: 860px;
-        border-radius: 70px;
+      #hl-platform span {
+        color: var(--cyan);
+      }
+
+      /* AI Tutor */
+      .feat-title {
+        font-size: 110px;
+        font-weight: 900;
+        line-height: 1;
+      }
+      .feat-sub {
+        font-size: 52px;
+        font-weight: 800;
+        color: var(--muted);
+      }
+      #t-phone {
+        width: 720px;
+        border-radius: 60px;
         background: #0b0f26;
         border: 10px solid #2a3159;
         box-shadow: 0 30px 90px rgba(139, 92, 246, 0.45);
-        display: flex;
-        flex-direction: column;
         overflow: hidden;
       }
-      #s5-head {
+      #t-head {
         display: flex;
         align-items: center;
         gap: 18px;
-        padding: 40px 40px 26px;
+        padding: 32px 36px 22px;
         border-bottom: 2px solid rgba(184, 192, 230, 0.15);
         text-align: left;
       }
-      #s5-avatar {
+      .avatar {
         width: 74px;
         height: 74px;
         border-radius: 50%;
@@ -282,20 +317,20 @@
         font-weight: 900;
         flex: none;
       }
-      #s5-head-name {
+      #t-head-name {
         font-size: 38px;
         font-weight: 900;
       }
-      #s5-head-status {
+      #t-head-status {
         font-size: 30px;
         font-weight: 600;
         color: var(--green);
       }
-      #s5-chat {
+      #t-chat {
         display: flex;
         flex-direction: column;
         gap: 22px;
-        padding: 30px 32px;
+        padding: 30px 32px 40px;
       }
       .tag {
         align-self: flex-start;
@@ -303,21 +338,15 @@
         border-radius: 999px;
         font-size: 30px;
         font-weight: 800;
-        letter-spacing: 0.08em;
-      }
-      .tag.jee {
+        letter-spacing: 0.06em;
         background: rgba(34, 211, 238, 0.18);
         color: var(--cyan);
       }
-      .tag.neet {
-        background: rgba(34, 197, 94, 0.18);
-        color: var(--green);
-      }
       .msg {
-        max-width: 560px;
+        max-width: 580px;
         padding: 22px 28px;
         border-radius: 30px;
-        font-size: 34px;
+        font-size: 36px;
         font-weight: 700;
         line-height: 1.3;
         text-align: left;
@@ -336,41 +365,96 @@
         color: var(--cyan);
       }
 
-      /* Scene 6 — CTA */
-      #s6-see {
-        font-size: 64px;
+      /* AI Scratchpad */
+      #sp-board {
+        position: relative;
+        width: 860px;
+        height: 640px;
+        border-radius: 40px;
+        background: #f7f8fc;
+        box-shadow: 0 30px 90px rgba(34, 211, 238, 0.35);
+        overflow: hidden;
+      }
+      #sp-svg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      #sp-eq {
+        position: absolute;
+        left: 40px;
+        top: 34px;
+        padding: 14px 26px;
+        border-radius: 18px;
+        background: #fff3b0;
+        color: #1b1f3b;
+        font-size: 44px;
+        font-weight: 900;
+      }
+      #sp-hint {
+        position: absolute;
+        right: 36px;
+        bottom: 36px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 18px 26px;
+        border-radius: 24px;
+        background: #1c2350;
+        font-size: 38px;
+        font-weight: 800;
+      }
+      #sp-hint .avatar {
+        width: 62px;
+        height: 62px;
+        font-size: 28px;
+      }
+      #sp-hint b {
+        color: var(--cyan);
+      }
+
+      /* CTA */
+      #c-milte {
+        font-size: 70px;
         font-weight: 800;
         color: var(--muted);
       }
-      #s6-hall {
-        font-size: 180px;
+      #c-iitf {
+        font-size: 150px;
         font-weight: 900;
         line-height: 1;
       }
-      #s6-info {
+      #c-info {
         display: flex;
         flex-direction: column;
         gap: 14px;
         padding: 34px 50px;
-        border-radius: 36px;
-        background: var(--card);
-        border: 3px solid var(--line);
       }
       .info-line {
-        font-size: 44px;
+        font-size: 46px;
         font-weight: 800;
         white-space: nowrap;
       }
       .info-line span {
         color: var(--cyan);
       }
-      #s6-cta {
-        padding: 26px 56px;
-        border-radius: 999px;
-        background: linear-gradient(90deg, var(--cyan), var(--violet));
-        font-size: 50px;
+
+      /* End lockup */
+      #e-tag {
+        font-size: 60px;
         font-weight: 900;
-        white-space: nowrap;
+        line-height: 1.2;
+      }
+      #e-tri {
+        display: flex;
+        width: 520px;
+        height: 14px;
+        border-radius: 7px;
+        overflow: hidden;
+      }
+      #e-tri div {
+        flex: 1;
       }
     </style>
   </head>
@@ -379,18 +463,42 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="20"
+      data-duration="41.5"
       data-width="1080"
       data-height="1920"
     >
-      <div id="stage" class="clip" data-start="0" data-duration="20" data-track-index="0">
+      <div id="stage" class="clip" data-start="0" data-duration="41.5" data-track-index="0">
         <div id="glow-a" class="glow" data-layout-allow-overflow="true"></div>
         <div id="glow-b" class="glow" data-layout-allow-overflow="true"></div>
         <svg id="net" viewBox="0 0 1080 1920"></svg>
 
-        <!-- Scene 1 -->
-        <div id="s1" class="scene">
-          <svg id="s1-mark" viewBox="0 0 200 200">
+        <!-- 1. Hook (0 – 6.4s) -->
+        <div id="sh" class="scene">
+          <svg id="h-icon" viewBox="0 0 220 180" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M110 40 C80 22 40 20 14 30 V160 C40 150 80 152 110 170 C140 152 180 150 206 160 V30 C180 20 140 22 110 40 Z" stroke="#b8c0e6" stroke-width="8" />
+            <path d="M110 40 V170" stroke="#b8c0e6" stroke-width="8" />
+            <path id="h-spark1" d="M176 6 L182 22 L198 28 L182 34 L176 50 L170 34 L154 28 L170 22 Z" fill="#22d3ee" />
+            <path id="h-spark2" d="M44 0 L48 10 L58 14 L48 18 L44 28 L40 18 L30 14 L40 10 Z" fill="#ec4899" />
+          </svg>
+          <div id="h-q" class="kicker">Kya aapne kabhi socha hai…</div>
+          <div id="h-ai" class="grad">AI</div>
+          <div id="h-l1" class="h-line">aapki padhai ko</div>
+          <div id="h-easy">kitna aasaan</div>
+          <div id="h-l2" class="h-line">bana sakta hai?</div>
+        </div>
+
+        <!-- 2. Future (6.4 – 10.6s) -->
+        <div id="sf" class="scene">
+          <div id="f-ab" class="kicker">Ab waqt hai</div>
+          <div id="f-edu">EDUCATION KA</div>
+          <div id="f-future" class="grad">FUTURE</div>
+          <div id="f-bar"></div>
+          <div id="f-exp">experience karne ka!</div>
+        </div>
+
+        <!-- 3. Brand + IITF (10.6 – 16.4s) -->
+        <div id="sb" class="scene">
+          <svg id="b-mark" class="mark" viewBox="0 0 200 200">
             <defs>
               <linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0" stop-color="#22d3ee" />
@@ -407,20 +515,25 @@
             <circle cx="60" cy="140" r="12" fill="#8b5cf6" />
             <circle cx="140" cy="140" r="12" fill="#ec4899" />
           </svg>
-          <div id="s1-name">Piyush<span class="ai">AI</span></div>
-          <div id="s1-coming">IS COMING TO</div>
+          <div id="b-name" class="brand">Piyush<span class="ai">AI</span></div>
+          <div id="b-coming">AA RAHA HAI</div>
+          <div id="b-iitf">
+            <span class="b-line">INDIA</span>
+            <span class="b-line grad">INTERNATIONAL</span>
+            <span class="b-line">TRADE FAIR</span>
+          </div>
+          <div id="b-year">2026</div>
         </div>
 
-        <!-- Scene 2 -->
-        <div id="s2" class="scene">
-          <div id="s2-kicker">NEW DELHI</div>
-          <div id="s2-title">
-            <span class="s2-line">INDIA</span>
-            <span class="s2-line grad">INTERNATIONAL</span>
-            <span class="s2-line">TRADE FAIR</span>
+        <!-- 4. Dates (16.4 – 20.4s) -->
+        <div id="sd" class="scene">
+          <div id="d-cal" class="card">
+            <div id="d-cal-top">NOVEMBER</div>
+            <div id="d-cal-days" class="grad">19–23</div>
+            <div id="d-cal-year">2026</div>
           </div>
-          <div id="s2-venue">
-            <svg id="s2-pin" viewBox="0 0 56 70">
+          <div id="d-venue" class="card">
+            <svg id="d-pin" viewBox="0 0 56 70">
               <path d="M28 68 C28 68 4 40 4 26 A24 24 0 0 1 52 26 C52 40 28 68 28 68 Z" fill="#ff9933" />
               <circle cx="28" cy="26" r="9" fill="#ffffff" />
             </svg>
@@ -428,200 +541,109 @@
           </div>
         </div>
 
-        <!-- Scene 3 -->
-        <div id="s3" class="scene">
-          <div id="s3-cal">
-            <div id="s3-cal-top">NOVEMBER</div>
-            <div id="s3-cal-days" class="grad">19–23</div>
-            <div id="s3-cal-year">2026</div>
-          </div>
-          <div id="s3-chips">
-            <div class="chip"><b>19</b>THU</div>
-            <div class="chip"><b>20</b>FRI</div>
-            <div class="chip"><b>21</b>SAT</div>
-            <div class="chip"><b>22</b>SUN</div>
-            <div class="chip"><b>23</b>MON</div>
-          </div>
-        </div>
-
-        <!-- Scene 4 -->
-        <div id="s4" class="scene">
-          <div id="s4-kicker">VISIT US AT</div>
-          <div id="s4-grid">
+        <!-- 5. Hall 14 + platform (20.4 – 25.9s) -->
+        <div id="shl" class="scene">
+          <div id="hl-kicker" class="kicker">Aakar dekhiye</div>
+          <div id="hl-grid">
             <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
             <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
             <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
             <div class="tile"></div><div id="tile-14">14</div><div class="tile"></div><div class="tile"></div>
           </div>
-          <div id="s4-hall" class="grad">HALL 14</div>
+          <div id="hl-hall" class="grad">HALL 14</div>
+          <div id="hl-platform" class="card"><span>JEE–NEET</span> AI Learning Platform</div>
         </div>
 
-        <!-- Scene 5 -->
-        <div id="s5" class="scene">
-          <div id="s5-title"><span style="display:block">Try our <span class="grad">JEE &amp; NEET</span></span><span style="display:block">AI Platform</span></div>
-          <div id="s5-phone">
-            <div id="s5-head">
-              <div id="s5-avatar">AI</div>
+        <!-- 6a. AI Tutor (25.9 – 29.6s) -->
+        <div id="st" class="scene">
+          <div id="t-title" class="feat-title grad">AI Tutor</div>
+          <div id="t-sub" class="feat-sub">karega aapke doubts solve</div>
+          <div id="t-phone">
+            <div id="t-head">
+              <div class="avatar">AI</div>
               <div>
-                <div id="s5-head-name">PiyushAI</div>
-                <div id="s5-head-status">● online</div>
+                <div id="t-head-name">PiyushAI Tutor</div>
+                <div id="t-head-status">● online</div>
               </div>
             </div>
-            <div id="s5-chat">
-              <div id="q1-tag" class="tag jee">JEE · MATHS</div>
-              <div id="q1" class="msg user">Solve ∫ x·e<sup>x</sup> dx</div>
-              <div id="a1" class="msg bot">By parts: <b>e<sup>x</sup>(x − 1) + C</b> ✓</div>
-              <div id="q2-tag" class="tag neet">NEET · BIOLOGY</div>
-              <div id="q2" class="msg user">Main role of mitochondria?</div>
-              <div id="a2" class="msg bot">Making <b>ATP</b> through cellular respiration ✓</div>
+            <div id="t-chat">
+              <div id="t-tag" class="tag">JEE · MATHS</div>
+              <div id="t-q" class="msg user">Solve ∫ x·e<sup>x</sup> dx</div>
+              <div id="t-a" class="msg bot">By parts: <b>e<sup>x</sup>(x − 1) + C</b> ✓</div>
             </div>
           </div>
         </div>
 
-        <!-- Scene 6 -->
-        <div id="s6" class="scene">
-          <div id="s6-see">See you at</div>
-          <div id="s6-hall" class="grad">HALL 14</div>
-          <div id="s6-info">
-            <div class="info-line"><span>19–23 Nov 2026</span></div>
-            <div class="info-line">India International Trade Fair</div>
-            <div class="info-line">Bharat Mandapam, New Delhi</div>
+        <!-- 6b. AI Scratchpad (29.6 – 33.2s) -->
+        <div id="ss" class="scene">
+          <div id="s-title" class="feat-title grad">AI Scratchpad</div>
+          <div id="s-sub" class="feat-sub">learning ko banaye interactive</div>
+          <div id="sp-board">
+            <svg id="sp-svg" viewBox="0 0 860 640" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path id="sp-axes" d="M80 420 H800 M430 600 V120" stroke="#9aa3c7" stroke-width="5" pathLength="1" stroke-dasharray="1" />
+              <path id="sp-curve" d="M250 180 Q430 660 610 180" stroke="#8b5cf6" stroke-width="9" pathLength="1" stroke-dasharray="1" />
+              <circle id="sp-r1" cx="340" cy="420" r="14" fill="#ec4899" />
+              <circle id="sp-r2" cx="520" cy="420" r="14" fill="#ec4899" />
+              <path id="sp-ring" d="M340 420 m-34 0 a34 34 0 1 0 68 0 a34 34 0 1 0 -68 0" stroke="#22d3ee" stroke-width="6" pathLength="1" stroke-dasharray="1" />
+            </svg>
+            <div id="sp-eq">y = x² − 4</div>
+            <div id="sp-hint"><div class="avatar">AI</div><div>Roots: <b>x = ±2</b> ✓</div></div>
           </div>
-          <div id="s6-cta">Try PiyushAI live!</div>
+        </div>
+
+        <!-- 7. CTA (33.2 – 37s) -->
+        <div id="sc" class="scene">
+          <div id="c-milte">Toh milte hain</div>
+          <div id="c-iitf" class="grad">IITF 2026</div>
+          <div id="c-info" class="card">
+            <div class="info-line"><span>19–23 November</span></div>
+            <div class="info-line">Hall 14 · Bharat Mandapam</div>
+            <div class="info-line">New Delhi</div>
+          </div>
+        </div>
+
+        <!-- 8. End lockup (37 – 41.5s) -->
+        <div id="se" class="scene">
+          <svg id="e-mark" class="mark" viewBox="0 0 200 200">
+            <rect x="10" y="10" width="180" height="180" rx="48" fill="none" stroke="url(#markGrad)" stroke-width="12" />
+            <g stroke="#ffffff" stroke-width="7" stroke-linecap="round">
+              <path d="M60 140 L100 60 L140 140" fill="none" />
+              <path d="M76 110 H124" />
+            </g>
+            <circle cx="100" cy="60" r="12" fill="#22d3ee" />
+            <circle cx="60" cy="140" r="12" fill="#8b5cf6" />
+            <circle cx="140" cy="140" r="12" fill="#ec4899" />
+          </svg>
+          <div id="e-name" class="brand">Piyush<span class="ai">AI</span></div>
+          <div id="e-tri"><div style="background: #ff9933"></div><div style="background: #ffffff"></div><div style="background: #22c55e"></div></div>
+          <div id="e-tag">AI Literacy <span class="grad">for All Indians</span></div>
         </div>
       </div>
 
-      <!-- Original synthesized music bed (no samples, no third-party audio) -->
+      <!-- Original synthesized music bed (no samples), ducked under the voice -->
       <audio
         id="music"
-        src="assets/audio/piyushai-bed.m4a"
+        src="assets/audio/piyushai-hinglish-bed.m4a"
         data-start="0"
-        data-duration="20"
+        data-duration="41.5"
         data-track-index="1"
         data-volume="0.85"
-        data-automation="{&quot;version&quot;:1,&quot;lanes&quot;:[{&quot;target&quot;:&quot;volume&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0.85},{&quot;t&quot;:0.35,&quot;v&quot;:0.85},{&quot;t&quot;:0.5,&quot;v&quot;:0.38},{&quot;t&quot;:18.85,&quot;v&quot;:0.38},{&quot;t&quot;:19.2,&quot;v&quot;:0.85}]}]}"
-      ></audio>
-
-      <!-- English voiceover (hidden; remove data-hidden here and add it to the Hinglish tracks to switch back): Kokoro-82M, voice am_michael -->
-      <audio
-        id="vo1"
-        class="clip"
-        data-hidden
-        src="assets/vo/vo1.m4a"
-        data-start="0.5"
-        data-duration="2.07"
-        data-track-index="2"
-        data-volume="1"
-      ></audio>
-      <audio
-        id="vo2"
-        class="clip"
-        data-hidden
-        src="assets/vo/vo2.m4a"
-        data-start="2.75"
-        data-duration="3.95"
-        data-track-index="2"
-        data-volume="1"
-      ></audio>
-      <audio
-        id="vo3"
-        class="clip"
-        data-hidden
-        src="assets/vo/vo3.m4a"
-        data-start="6.85"
-        data-duration="2.37"
-        data-track-index="2"
-        data-volume="1"
-      ></audio>
-      <audio
-        id="vo4"
-        class="clip"
-        data-hidden
-        src="assets/vo/vo4.m4a"
-        data-start="9.9"
-        data-duration="1.92"
-        data-track-index="2"
-        data-volume="1"
-      ></audio>
-      <audio
-        id="vo5"
-        class="clip"
-        data-hidden
-        src="assets/vo/vo5.m4a"
-        data-start="12.6"
-        data-duration="3.8"
-        data-track-index="2"
-        data-volume="1"
-      ></audio>
-      <audio
-        id="vo6"
-        class="clip"
-        data-hidden
-        src="assets/vo/vo6.m4a"
-        data-start="16.8"
-        data-duration="1.69"
-        data-track-index="2"
-        data-volume="1"
+        data-automation="{&quot;version&quot;:1,&quot;lanes&quot;:[{&quot;target&quot;:&quot;volume&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0.85},{&quot;t&quot;:0.25,&quot;v&quot;:0.85},{&quot;t&quot;:0.4,&quot;v&quot;:0.38},{&quot;t&quot;:40.7,&quot;v&quot;:0.38},{&quot;t&quot;:41.0,&quot;v&quot;:0.85}]}]}"
       ></audio>
 
       <!-- Hinglish voiceover: local Kokoro-82M TTS (Apache-2.0), voice hm_omega -->
-      <audio
-        id="hi1"
-        class="clip"
-        src="assets/vo-hi/vo1.m4a"
-        data-start="0.5"
-        data-duration="1.92"
-        data-track-index="3"
-        data-volume="1"
-      ></audio>
-      <audio
-        id="hi2"
-        class="clip"
-        src="assets/vo-hi/vo2.m4a"
-        data-start="2.6"
-        data-duration="4.2"
-        data-track-index="3"
-        data-volume="1"
-      ></audio>
-      <audio
-        id="hi3"
-        class="clip"
-        src="assets/vo-hi/vo3.m4a"
-        data-start="6.95"
-        data-duration="2.09"
-        data-track-index="3"
-        data-volume="1"
-      ></audio>
-      <audio
-        id="hi4"
-        class="clip"
-        src="assets/vo-hi/vo4.m4a"
-        data-start="9.7"
-        data-duration="2.62"
-        data-track-index="3"
-        data-volume="1"
-      ></audio>
-      <audio
-        id="hi5"
-        class="clip"
-        src="assets/vo-hi/vo5.m4a"
-        data-start="12.5"
-        data-duration="4.05"
-        data-track-index="3"
-        data-volume="1"
-      ></audio>
-      <audio
-        id="hi6"
-        class="clip"
-        src="assets/vo-hi/vo6.m4a"
-        data-start="16.75"
-        data-duration="2.07"
-        data-track-index="3"
-        data-volume="1"
-      ></audio>
+      <audio id="vo1" class="clip" src="assets/vo2/l1.m4a" data-start="0.4" data-duration="5.76" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo2" class="clip" src="assets/vo2/l2.m4a" data-start="6.55" data-duration="3.86" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo3" class="clip" src="assets/vo2/l3.m4a" data-start="10.75" data-duration="5.5" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo4" class="clip" src="assets/vo2/l4.m4a" data-start="16.55" data-duration="3.71" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo5" class="clip" src="assets/vo2/l5.m4a" data-start="20.55" data-duration="5.2" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo6" class="clip" src="assets/vo2/l6.m4a" data-start="25.95" data-duration="7.04" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo7" class="clip" src="assets/vo2/l7.m4a" data-start="33.35" data-duration="3.6" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo8" class="clip" src="assets/vo2/l8.m4a" data-start="37.2" data-duration="3.43" data-track-index="2" data-volume="1"></audio>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
+      const D = 41.5;
 
       // Deterministic neural-network background (seeded LCG — no Math.random)
       (function () {
@@ -635,8 +657,7 @@
         pts.forEach((p, i) => {
           pts.forEach((q, j) => {
             if (j <= i) return;
-            const d = Math.hypot(p[0] - q[0], p[1] - q[1]);
-            if (d < 260) {
+            if (Math.hypot(p[0] - q[0], p[1] - q[1]) < 260) {
               const l = document.createElementNS(NS, "line");
               l.setAttribute("x1", p[0]);
               l.setAttribute("y1", p[1]);
@@ -659,65 +680,97 @@
           return c;
         });
         tl.fromTo(lines, { opacity: 0 }, { opacity: 1, duration: 0.6, stagger: 0.012, ease: "power1.out" }, 0);
-        tl.fromTo(nodes, { opacity: 0.25 }, { opacity: 1, duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 19, stagger: 0.09 }, 0);
-        tl.fromTo("#net", { y: 0 }, { y: -120, duration: 20, ease: "none" }, 0);
+        tl.fromTo(nodes, { opacity: 0.25 }, { opacity: 1, duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 41, stagger: 0.09 }, 0);
+        tl.fromTo("#net", { y: 0 }, { y: -160, duration: D, ease: "none" }, 0);
       })();
-      tl.fromTo("#glow-a", { x: 0, y: 0 }, { x: 220, y: 200, duration: 20, ease: "sine.inOut" }, 0);
-      tl.fromTo("#glow-b", { x: 0, y: 0 }, { x: -220, y: -200, duration: 20, ease: "sine.inOut" }, 0);
+      tl.fromTo("#glow-a", { x: 0, y: 0 }, { x: 220, y: 200, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo("#glow-b", { x: 0, y: 0 }, { x: -220, y: -200, duration: D, ease: "sine.inOut" }, 0);
 
-      // Scene 1 — 0 to 3s
-      tl.fromTo("#s1-mark", { scale: 0, rotation: -120 }, { scale: 1, rotation: 0, duration: 0.6, ease: "back.out(1.8)" }, 0.15);
-      tl.fromTo("#s1-name", { opacity: 0, y: 60, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.55, ease: "power3.out" }, 0.6);
-      tl.fromTo("#s1-coming", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, 1.4);
-      tl.to("#s1", { autoAlpha: 0, scale: 1.1, duration: 0.3, ease: "power2.in" }, 2.75);
+      const enter = (sel, at) => tl.fromTo(sel, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.1 }, at);
+      const rise = (sel, at, d = 0.4) => tl.fromTo(sel, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: d, ease: "power3.out" }, at);
+      const slam = (sel, at, s = 2) => tl.fromTo(sel, { opacity: 0, scale: s }, { opacity: 1, scale: 1, duration: 0.45, ease: "power4.out" }, at);
 
-      // Scene 2 — 3 to 6.5s
-      tl.fromTo("#s2", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.1 }, 3.0);
-      tl.fromTo("#s2-kicker", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 3.0);
-      tl.fromTo(".s2-line", { opacity: 0, x: -140 }, { opacity: 1, x: 0, duration: 0.45, ease: "power4.out", stagger: 0.2 }, 3.1);
-      tl.fromTo("#s2-venue", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 3.9);
-      tl.fromTo("#s2-pin", { y: -60 }, { y: 0, duration: 0.5, ease: "bounce.out" }, 4.0);
-      tl.to("#s2", { autoAlpha: 0, y: -80, duration: 0.3, ease: "power2.in" }, 6.2);
+      // 1. Hook — 0 to 6.4s (questions land with the voice)
+      tl.fromTo("#h-icon", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.2);
+      tl.fromTo(["#h-spark1", "#h-spark2"], { opacity: 0.3 }, { opacity: 1, duration: 0.4, yoyo: true, repeat: 13, ease: "sine.inOut" }, 0.4);
+      rise("#h-q", 0.4);
+      slam("#h-ai", 1.9, 2.4);
+      rise("#h-l1", 2.6);
+      tl.fromTo("#h-easy", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.2)" }, 3.7);
+      rise("#h-l2", 4.6);
+      tl.to("#sh", { autoAlpha: 0, scale: 1.08, duration: 0.25, ease: "power2.in" }, 6.15);
 
-      // Scene 3 — 6.5 to 9.5s
-      tl.fromTo("#s3", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.1 }, 6.5);
-      tl.fromTo("#s3-cal", { rotationX: -90, opacity: 0, transformPerspective: 1200 }, { rotationX: 0, opacity: 1, transformPerspective: 1200, duration: 0.6, ease: "back.out(1.4)" }, 6.5);
-      tl.fromTo(".chip", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(2)", stagger: 0.12 }, 7.1);
-      tl.to("#s3", { autoAlpha: 0, scale: 0.92, duration: 0.3, ease: "power2.in" }, 9.2);
+      // 2. Future — 6.4 to 10.6s
+      enter("#sf", 6.4);
+      rise("#f-ab", 6.45);
+      tl.fromTo("#f-edu", { opacity: 0, x: -120 }, { opacity: 1, x: 0, duration: 0.4, ease: "power4.out" }, 7.0);
+      slam("#f-future", 7.6, 2.2);
+      tl.fromTo("#f-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.out" }, 8.0);
+      rise("#f-exp", 8.6);
+      tl.to("#sf", { autoAlpha: 0, y: -80, duration: 0.25, ease: "power2.in" }, 10.35);
 
-      // Scene 4 — 9.5 to 12.5s
-      tl.fromTo("#s4", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.1 }, 9.5);
-      tl.fromTo("#s4-kicker", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 9.5);
-      tl.fromTo(".tile", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.03 }, 9.55);
-      tl.fromTo("#tile-14", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(3)" }, 10.1);
-      tl.to("#tile-14", { scale: 1.15, duration: 0.2, ease: "sine.inOut", yoyo: true, repeat: 3 }, 10.5);
-      tl.fromTo("#s4-hall", { scale: 2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "power4.out" }, 10.9);
-      tl.to("#s4", { autoAlpha: 0, x: -200, duration: 0.3, ease: "power2.in" }, 12.2);
+      // 3. Brand + IITF — 10.6 to 16.4s
+      enter("#sb", 10.6);
+      tl.fromTo("#b-mark", { scale: 0, rotation: -120 }, { scale: 1, rotation: 0, duration: 0.55, ease: "back.out(1.8)" }, 10.6);
+      tl.fromTo("#b-name", { opacity: 0, y: 50, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "power3.out" }, 10.8);
+      tl.fromTo("#b-coming", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power3.out" }, 11.7);
+      tl.fromTo(".b-line", { opacity: 0, x: -140 }, { opacity: 1, x: 0, duration: 0.45, ease: "power4.out", stagger: 0.35 }, 12.5);
+      tl.fromTo("#b-year", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.4)" }, 14.6);
+      tl.to("#sb", { autoAlpha: 0, scale: 0.92, duration: 0.25, ease: "power2.in" }, 16.15);
 
-      // Scene 5 — 12.5 to 16.5s (demo chat)
-      tl.fromTo("#s5", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.1 }, 12.5);
-      tl.fromTo("#s5-title", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 12.5);
-      tl.fromTo("#s5-phone", { y: 300, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 12.6);
-      const pop = (sel, at) =>
-        tl.fromTo(sel, { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(2)" }, at);
-      const type = (sel, at) =>
-        tl.fromTo(sel, { opacity: 1, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "none" }, at);
-      pop("#q1-tag", 12.95);
-      pop("#q1", 13.0);
-      type("#a1", 13.35);
-      pop("#q2-tag", 13.85);
-      pop("#q2", 13.9);
-      type("#a2", 14.15);
-      tl.to("#s5", { autoAlpha: 0, scale: 0.94, duration: 0.3, ease: "power2.in" }, 16.2);
+      // 4. Dates — 16.4 to 20.4s
+      enter("#sd", 16.4);
+      tl.fromTo("#d-cal", { rotationX: -90, opacity: 0, transformPerspective: 1200 }, { rotationX: 0, opacity: 1, transformPerspective: 1200, duration: 0.6, ease: "back.out(1.4)" }, 16.45);
+      tl.fromTo("#d-venue", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 18.0);
+      tl.fromTo("#d-pin", { y: -60 }, { y: 0, duration: 0.5, ease: "bounce.out" }, 18.1);
+      tl.to("#sd", { autoAlpha: 0, y: -80, duration: 0.25, ease: "power2.in" }, 20.15);
 
-      // Scene 6 — 16.5 to 20s (CTA)
-      tl.fromTo("#s6", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.1 }, 16.5);
-      tl.fromTo("#s6-see", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 16.5);
-      tl.fromTo("#s6-hall", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "power4.out" }, 16.65);
-      tl.fromTo(".info-line", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out", stagger: 0.18 }, 17.0);
-      tl.fromTo("#s6-info", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 16.95);
-      tl.fromTo("#s6-cta", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2.2)" }, 17.7);
-      tl.to("#s6-cta", { scale: 1.07, duration: 0.3, ease: "sine.inOut", yoyo: true, repeat: 3 }, 18.3);
+      // 5. Hall 14 + platform — 20.4 to 25.9s
+      enter("#shl", 20.4);
+      rise("#hl-kicker", 20.4, 0.3);
+      tl.fromTo(".tile", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.03 }, 20.45);
+      tl.fromTo("#tile-14", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(3)" }, 21.0);
+      tl.to("#tile-14", { scale: 1.15, duration: 0.2, ease: "sine.inOut", yoyo: true, repeat: 3 }, 21.4);
+      slam("#hl-hall", 21.6);
+      tl.fromTo("#hl-platform", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.8)" }, 23.0);
+      tl.to("#shl", { autoAlpha: 0, x: -200, duration: 0.25, ease: "power2.in" }, 25.65);
+
+      // 6a. AI Tutor — 25.9 to 29.6s
+      enter("#st", 25.9);
+      slam("#t-title", 25.9, 1.8);
+      rise("#t-sub", 26.3, 0.35);
+      tl.fromTo("#t-phone", { y: 300, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, 26.0);
+      tl.fromTo(["#t-tag", "#t-q"], { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.1 }, 26.4);
+      tl.fromTo("#t-a", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "none" }, 26.9);
+      tl.to("#st", { autoAlpha: 0, x: -200, duration: 0.25, ease: "power2.in" }, 29.35);
+
+      // 6b. AI Scratchpad — 29.6 to 33.2s
+      enter("#ss", 29.6);
+      slam("#s-title", 29.6, 1.8);
+      rise("#s-sub", 29.95, 0.35);
+      tl.fromTo("#sp-board", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, 29.7);
+      tl.fromTo("#sp-axes", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" }, 29.9);
+      tl.fromTo("#sp-eq", { opacity: 0, rotation: -8, scale: 0.6 }, { opacity: 1, rotation: -3, scale: 1, duration: 0.35, ease: "back.out(2)" }, 29.95);
+      tl.fromTo("#sp-curve", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.8, ease: "power1.inOut" }, 30.15);
+      tl.fromTo(["#sp-r1", "#sp-r2"], { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, transformOrigin: "50% 50%", duration: 0.3, ease: "back.out(3)", stagger: 0.12 }, 30.9);
+      tl.fromTo("#sp-ring", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, 31.0);
+      tl.fromTo("#sp-hint", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, 31.15);
+      tl.to("#ss", { autoAlpha: 0, scale: 0.94, duration: 0.25, ease: "power2.in" }, 32.95);
+
+      // 7. CTA — 33.2 to 37s
+      enter("#sc", 33.2);
+      rise("#c-milte", 33.2, 0.35);
+      slam("#c-iitf", 33.5, 2.2);
+      tl.fromTo("#c-info", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 34.2);
+      tl.fromTo(".info-line", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out", stagger: 0.18 }, 34.25);
+      tl.to("#sc", { autoAlpha: 0, scale: 1.06, duration: 0.25, ease: "power2.in" }, 36.75);
+
+      // 8. End lockup — 37 to 41.5s
+      enter("#se", 37.0);
+      tl.fromTo("#e-mark", { scale: 0, rotation: -120 }, { scale: 1, rotation: 0, duration: 0.55, ease: "back.out(1.8)" }, 37.0);
+      tl.fromTo("#e-name", { opacity: 0, y: 50, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "power3.out" }, 37.2);
+      tl.fromTo("#e-tri", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.out" }, 38.0);
+      rise("#e-tag", 38.3, 0.5);
 
       window.__timelines["main"] = tl;
       tl.seek(0);
