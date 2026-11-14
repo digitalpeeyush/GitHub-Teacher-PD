@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      /* Montserrat — SIL Open Font License 1.1 (assets/fonts/OFL-LICENSE.txt) */
+      @font-face {
+        font-family: "Montserrat";
+        font-weight: 500;
+        src: url("assets/fonts/montserrat-latin-500-normal.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Montserrat";
+        font-weight: 700;
+        src: url("assets/fonts/montserrat-latin-700-normal.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Montserrat";
+        font-weight: 800;
+        src: url("assets/fonts/montserrat-latin-800-normal.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Montserrat";
+        font-weight: 900;
+        src: url("assets/fonts/montserrat-latin-900-normal.woff2") format("woff2");
+      }
+
+      :root {
+        --bg: #060816;
+        --bg-2: #101634;
+        --ink: #ffffff;
+        --muted: #b8c0e6;
+        --cyan: #22d3ee;
+        --violet: #8b5cf6;
+        --pink: #ec4899;
+        --saffron: #ff9933;
+        --green: #22c55e;
+        --card: rgba(16, 22, 52, 0.92);
+        --line: rgba(34, 211, 238, 0.35);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--bg);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        font-family: "Montserrat", sans-serif;
+        color: var(--ink);
+      }
+      #stage {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        background: radial-gradient(ellipse at 50% 35%, var(--bg-2) 0%, var(--bg) 70%);
+      }
+      #net {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1080px;
+        height: 1920px;
+      }
+      .glow {
+        position: absolute;
+        width: 900px;
+        height: 900px;
+        border-radius: 50%;
+        filter: blur(140px);
+        opacity: 0.35;
+      }
+      #glow-a {
+        left: -300px;
+        top: -200px;
+        background: var(--violet);
+      }
+      #glow-b {
+        right: -300px;
+        bottom: -200px;
+        background: var(--cyan);
+      }
+
+      .scene {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 260px 80px 460px;
+        gap: 36px;
+        text-align: center;
+      }
+      .grad {
+        background: linear-gradient(90deg, var(--cyan), var(--violet) 55%, var(--pink));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      /* Scene 1 — brand */
+      #s1-mark {
+        width: 200px;
+        height: 200px;
+      }
+      #s1-name {
+        font-size: 170px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+      #s1-name .ai {
+        color: var(--cyan);
+      }
+      #s1-coming {
+        font-size: 60px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+      }
+
+      /* Scene 2 — venue */
+      #s2-kicker {
+        font-size: 40px;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        color: var(--saffron);
+      }
+      .s2-line {
+        display: block;
+        font-size: 104px;
+        font-weight: 900;
+        line-height: 1.02;
+        white-space: nowrap;
+      }
+      #s2-venue {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        padding: 24px 40px;
+        border-radius: 999px;
+        background: var(--card);
+        border: 3px solid var(--line);
+        font-size: 46px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+      #s2-pin {
+        width: 56px;
+        height: 70px;
+        flex: none;
+      }
+
+      /* Scene 3 — dates */
+      #s3-cal {
+        width: 620px;
+        border-radius: 44px;
+        overflow: hidden;
+        background: var(--card);
+        border: 3px solid var(--line);
+      }
+      #s3-cal-top {
+        padding: 26px 0;
+        background: linear-gradient(90deg, var(--violet), var(--pink));
+        font-size: 64px;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+      }
+      #s3-cal-days {
+        padding: 30px 0 10px;
+        font-size: 190px;
+        font-weight: 900;
+        line-height: 1;
+      }
+      #s3-cal-year {
+        padding-bottom: 34px;
+        font-size: 54px;
+        font-weight: 800;
+        color: var(--muted);
+      }
+      #s3-chips {
+        display: flex;
+        gap: 18px;
+      }
+      .chip {
+        width: 128px;
+        padding: 18px 0;
+        border-radius: 24px;
+        background: var(--card);
+        border: 3px solid var(--cyan);
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--muted);
+      }
+      .chip b {
+        display: block;
+        font-size: 52px;
+        font-weight: 900;
+        color: var(--ink);
+      }
+
+      /* Scene 4 — Hall 14 */
+      #s4-kicker {
+        font-size: 50px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+      }
+      #s4-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 170px);
+        gap: 22px;
+      }
+      .tile {
+        height: 120px;
+        border-radius: 22px;
+        background: rgba(184, 192, 230, 0.08);
+        border: 2px solid rgba(184, 192, 230, 0.18);
+      }
+      #tile-14 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, var(--cyan), var(--violet));
+        border: none;
+        font-size: 64px;
+        font-weight: 900;
+        box-shadow: 0 0 60px rgba(34, 211, 238, 0.6);
+      }
+      #s4-hall {
+        font-size: 200px;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      /* Scene 5 — platform demo */
+      #s5-title {
+        font-size: 66px;
+        font-weight: 900;
+        line-height: 1.15;
+      }
+      #s5-phone {
+        width: 700px;
+        height: 860px;
+        border-radius: 70px;
+        background: #0b0f26;
+        border: 10px solid #2a3159;
+        box-shadow: 0 30px 90px rgba(139, 92, 246, 0.45);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      #s5-head {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 40px 40px 26px;
+        border-bottom: 2px solid rgba(184, 192, 230, 0.15);
+        text-align: left;
+      }
+      #s5-avatar {
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--cyan), var(--violet));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        font-weight: 900;
+        flex: none;
+      }
+      #s5-head-name {
+        font-size: 38px;
+        font-weight: 900;
+      }
+      #s5-head-status {
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--green);
+      }
+      #s5-chat {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        padding: 30px 32px;
+      }
+      .tag {
+        align-self: flex-start;
+        padding: 6px 18px;
+        border-radius: 999px;
+        font-size: 30px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+      }
+      .tag.jee {
+        background: rgba(34, 211, 238, 0.18);
+        color: var(--cyan);
+      }
+      .tag.neet {
+        background: rgba(34, 197, 94, 0.18);
+        color: var(--green);
+      }
+      .msg {
+        max-width: 560px;
+        padding: 22px 28px;
+        border-radius: 30px;
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 1.3;
+        text-align: left;
+      }
+      .msg.user {
+        align-self: flex-end;
+        background: var(--violet);
+        border-bottom-right-radius: 8px;
+      }
+      .msg.bot {
+        align-self: flex-start;
+        background: #1c2350;
+        border-bottom-left-radius: 8px;
+      }
+      .msg.bot b {
+        color: var(--cyan);
+      }
+
+      /* Scene 6 — CTA */
+      #s6-see {
+        font-size: 64px;
+        font-weight: 800;
+        color: var(--muted);
+      }
+      #s6-hall {
+        font-size: 180px;
+        font-weight: 900;
+        line-height: 1;
+      }
+      #s6-info {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding: 34px 50px;
+        border-radius: 36px;
+        background: var(--card);
+        border: 3px solid var(--line);
+      }
+      .info-line {
+        font-size: 44px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+      .info-line span {
+        color: var(--cyan);
+      }
+      #s6-cta {
+        padding: 26px 56px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--cyan), var(--violet));
+        font-size: 50px;
+        font-weight: 900;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="20"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div id="stage" class="clip" data-start="0" data-duration="20" data-track-index="0">
+        <div id="glow-a" class="glow" data-layout-allow-overflow="true"></div>
+        <div id="glow-b" class="glow" data-layout-allow-overflow="true"></div>
+        <svg id="net" viewBox="0 0 1080 1920"></svg>
+
+        <!-- Scene 1 -->
+        <div id="s1" class="scene">
+          <svg id="s1-mark" viewBox="0 0 200 200">
+            <defs>
+              <linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#22d3ee" />
+                <stop offset="0.55" stop-color="#8b5cf6" />
+                <stop offset="1" stop-color="#ec4899" />
+              </linearGradient>
+            </defs>
+            <rect x="10" y="10" width="180" height="180" rx="48" fill="none" stroke="url(#markGrad)" stroke-width="12" />
+            <g stroke="#ffffff" stroke-width="7" stroke-linecap="round">
+              <path d="M60 140 L100 60 L140 140" fill="none" />
+              <path d="M76 110 H124" />
+            </g>
+            <circle cx="100" cy="60" r="12" fill="#22d3ee" />
+            <circle cx="60" cy="140" r="12" fill="#8b5cf6" />
+            <circle cx="140" cy="140" r="12" fill="#ec4899" />
+          </svg>
+          <div id="s1-name">Piyush<span class="ai">AI</span></div>
+          <div id="s1-coming">IS COMING TO</div>
+        </div>
+
+        <!-- Scene 2 -->
+        <div id="s2" class="scene">
+          <div id="s2-kicker">NEW DELHI</div>
+          <div id="s2-title">
+            <span class="s2-line">INDIA</span>
+            <span class="s2-line grad">INTERNATIONAL</span>
+            <span class="s2-line">TRADE FAIR</span>
+          </div>
+          <div id="s2-venue">
+            <svg id="s2-pin" viewBox="0 0 56 70">
+              <path d="M28 68 C28 68 4 40 4 26 A24 24 0 0 1 52 26 C52 40 28 68 28 68 Z" fill="#ff9933" />
+              <circle cx="28" cy="26" r="9" fill="#ffffff" />
+            </svg>
+            <div>Bharat Mandapam, New Delhi</div>
+          </div>
+        </div>
+
+        <!-- Scene 3 -->
+        <div id="s3" class="scene">
+          <div id="s3-cal">
+            <div id="s3-cal-top">NOVEMBER</div>
+            <div id="s3-cal-days" class="grad">19–23</div>
+            <div id="s3-cal-year">2026</div>
+          </div>
+          <div id="s3-chips">
+            <div class="chip"><b>19</b>THU</div>
+            <div class="chip"><b>20</b>FRI</div>
+            <div class="chip"><b>21</b>SAT</div>
+            <div class="chip"><b>22</b>SUN</div>
+            <div class="chip"><b>23</b>MON</div>
+          </div>
+        </div>
+
+        <!-- Scene 4 -->
+        <div id="s4" class="scene">
+          <div id="s4-kicker">VISIT US AT</div>
+          <div id="s4-grid">
+            <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+            <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+            <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+            <div class="tile"></div><div id="tile-14">14</div><div class="tile"></div><div class="tile"></div>
+          </div>
+          <div id="s4-hall" class="grad">HALL 14</div>
+        </div>
+
+        <!-- Scene 5 -->
+        <div id="s5" class="scene">
+          <div id="s5-title"><span style="display:block">Try our <span class="grad">JEE &amp; NEET</span></span><span style="display:block">AI Platform</span></div>
+          <div id="s5-phone">
+            <div id="s5-head">
+              <div id="s5-avatar">AI</div>
+              <div>
+                <div id="s5-head-name">PiyushAI</div>
+                <div id="s5-head-status">● online</div>
+              </div>
+            </div>
+            <div id="s5-chat">
+              <div id="q1-tag" class="tag jee">JEE · MATHS</div>
+              <div id="q1" class="msg user">Solve ∫ x·e<sup>x</sup> dx</div>
+              <div id="a1" class="msg bot">By parts: <b>e<sup>x</sup>(x − 1) + C</b> ✓</div>
+              <div id="q2-tag" class="tag neet">NEET · BIOLOGY</div>
+              <div id="q2" class="msg user">Main role of mitochondria?</div>
+              <div id="a2" class="msg bot">Making <b>ATP</b> through cellular respiration ✓</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scene 6 -->
+        <div id="s6" class="scene">
+          <div id="s6-see">See you at</div>
+          <div id="s6-hall" class="grad">HALL 14</div>
+          <div id="s6-info">
+            <div class="info-line"><span>19–23 Nov 2026</span></div>
+            <div class="info-line">India International Trade Fair</div>
+            <div class="info-line">Bharat Mandapam, New Delhi</div>
+          </div>
+          <div id="s6-cta">Try PiyushAI live!</div>
+        </div>
+      </div>
+
+      <!-- Original synthesized music bed (no samples, no third-party audio) -->
+      <audio
+        id="music"
+        src="assets/audio/piyushai-bed.m4a"
+        data-start="0"
+        data-duration="20"
+        data-track-index="1"
+        data-volume="0.85"
+      ></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // Deterministic neural-network background (seeded LCG — no Math.random)
+      (function () {
+        const svg = document.getElementById("net");
+        const NS = "http://www.w3.org/2000/svg";
+        let seed = 20261114;
+        const rand = () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296;
+        const pts = [];
+        for (let i = 0; i < 46; i++) pts.push([40 + rand() * 1000, 40 + rand() * 1840]);
+        const lines = [];
+        pts.forEach((p, i) => {
+          pts.forEach((q, j) => {
+            if (j <= i) return;
+            const d = Math.hypot(p[0] - q[0], p[1] - q[1]);
+            if (d < 260) {
+              const l = document.createElementNS(NS, "line");
+              l.setAttribute("x1", p[0]);
+              l.setAttribute("y1", p[1]);
+              l.setAttribute("x2", q[0]);
+              l.setAttribute("y2", q[1]);
+              l.setAttribute("stroke", "rgba(34,211,238,0.22)");
+              l.setAttribute("stroke-width", "2");
+              svg.appendChild(l);
+              lines.push(l);
+            }
+          });
+        });
+        const nodes = pts.map((p, i) => {
+          const c = document.createElementNS(NS, "circle");
+          c.setAttribute("cx", p[0]);
+          c.setAttribute("cy", p[1]);
+          c.setAttribute("r", 5 + (i % 3) * 2);
+          c.setAttribute("fill", i % 4 === 0 ? "#ec4899" : i % 2 ? "#22d3ee" : "#8b5cf6");
+          svg.appendChild(c);
+          return c;
+        });
+        tl.fromTo(lines, { opacity: 0 }, { opacity: 1, duration: 0.6, stagger: 0.012, ease: "power1.out" }, 0);
+        tl.fromTo(nodes, { opacity: 0.25 }, { opacity: 1, duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 19, stagger: 0.09 }, 0);
+        tl.fromTo("#net", { y: 0 }, { y: -120, duration: 20, ease: "none" }, 0);
+      })();
+      tl.fromTo("#glow-a", { x: 0, y: 0 }, { x: 220, y: 200, duration: 20, ease: "sine.inOut" }, 0);
+      tl.fromTo("#glow-b", { x: 0, y: 0 }, { x: -220, y: -200, duration: 20, ease: "sine.inOut" }, 0);
+
+      // Scene 1 — 0 to 3s
+      tl.fromTo("#s1-mark", { scale: 0, rotation: -120 }, { scale: 1, rotation: 0, duration: 0.6, ease: "back.out(1.8)" }, 0.15);
+      tl.fromTo("#s1-name", { opacity: 0, y: 60, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.55, ease: "power3.out" }, 0.6);
+      tl.fromTo("#s1-coming", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, 1.4);
+      tl.to("#s1", { autoAlpha: 0, scale: 1.1, duration: 0.3, ease: "power2.in" }, 2.75);
+
+      // Scene 2 — 3 to 6.5s
+      tl.fromTo("#s2", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.1 }, 3.0);
+      tl.fromTo("#s2-kicker", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 3.0);
+      tl.fromTo(".s2-line", { opacity: 0, x: -140 }, { opacity: 1, x: 0, duration: 0.45, ease: "power4.out", stagger: 0.2 }, 3.1);
+      tl.fromTo("#s2-venue", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 3.9);
+      tl.fromTo("#s2-pin", { y: -60 }, { y: 0, duration: 0.5, ease: "bounce.out" }, 4.0);
+      tl.to("#s2", { autoAlpha: 0, y: -80, duration: 0.3, ease: "power2.in" }, 6.2);
+
+      // Scene 3 — 6.5 to 9.5s
+      tl.fromTo("#s3", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.1 }, 6.5);
+      tl.fromTo("#s3-cal", { rotationX: -90, opacity: 0, transformPerspective: 1200 }, { rotationX: 0, opacity: 1, transformPerspective: 1200, duration: 0.6, ease: "back.out(1.4)" }, 6.5);
+      tl.fromTo(".chip", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(2)", stagger: 0.12 }, 7.1);
+      tl.to("#s3", { autoAlpha: 0, scale: 0.92, duration: 0.3, ease: "power2.in" }, 9.2);
+
+      // Scene 4 — 9.5 to 12.5s
+      tl.fromTo("#s4", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.1 }, 9.5);
+      tl.fromTo("#s4-kicker", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 9.5);
+      tl.fromTo(".tile", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.03 }, 9.55);
+      tl.fromTo("#tile-14", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(3)" }, 10.1);
+      tl.to("#tile-14", { scale: 1.15, duration: 0.2, ease: "sine.inOut", yoyo: true, repeat: 3 }, 10.5);
+      tl.fromTo("#s4-hall", { scale: 2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "power4.out" }, 10.9);
+      tl.to("#s4", { autoAlpha: 0, x: -200, duration: 0.3, ease: "power2.in" }, 12.2);
+
+      // Scene 5 — 12.5 to 16.5s (demo chat)
+      tl.fromTo("#s5", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.1 }, 12.5);
+      tl.fromTo("#s5-title", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 12.5);
+      tl.fromTo("#s5-phone", { y: 300, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 12.6);
+      const pop = (sel, at) =>
+        tl.fromTo(sel, { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(2)" }, at);
+      const type = (sel, at) =>
+        tl.fromTo(sel, { opacity: 1, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "none" }, at);
+      pop("#q1-tag", 12.95);
+      pop("#q1", 13.0);
+      type("#a1", 13.35);
+      pop("#q2-tag", 13.85);
+      pop("#q2", 13.9);
+      type("#a2", 14.15);
+      tl.to("#s5", { autoAlpha: 0, scale: 0.94, duration: 0.3, ease: "power2.in" }, 16.2);
+
+      // Scene 6 — 16.5 to 20s (CTA)
+      tl.fromTo("#s6", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.1 }, 16.5);
+      tl.fromTo("#s6-see", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 16.5);
+      tl.fromTo("#s6-hall", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "power4.out" }, 16.65);
+      tl.fromTo(".info-line", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out", stagger: 0.18 }, 17.0);
+      tl.fromTo("#s6-info", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 16.95);
+      tl.fromTo("#s6-cta", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2.2)" }, 17.7);
+      tl.to("#s6-cta", { scale: 1.07, duration: 0.3, ease: "sine.inOut", yoyo: true, repeat: 3 }, 18.3);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
