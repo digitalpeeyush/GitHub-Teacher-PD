@@ -616,7 +616,7 @@
           </svg>
           <div id="e-name" class="brand">Piyush<span class="ai">AI</span></div>
           <div id="e-tri"><div style="background: #ff9933"></div><div style="background: #ffffff"></div><div style="background: #22c55e"></div></div>
-          <div id="e-tag">AI Literacy <span class="grad">for All Indians</span></div>
+          <div id="e-tag">AI Literacy <span class="grad">for All</span></div>
         </div>
       </div>
 
@@ -628,7 +628,7 @@
         data-duration="41.5"
         data-track-index="1"
         data-volume="0.85"
-        data-automation="{&quot;version&quot;:1,&quot;lanes&quot;:[{&quot;target&quot;:&quot;volume&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0.85},{&quot;t&quot;:0.25,&quot;v&quot;:0.85},{&quot;t&quot;:0.4,&quot;v&quot;:0.38},{&quot;t&quot;:40.7,&quot;v&quot;:0.38},{&quot;t&quot;:41.0,&quot;v&quot;:0.85}]}]}"
+        data-automation="{&quot;version&quot;:1,&quot;lanes&quot;:[{&quot;target&quot;:&quot;volume&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0.85},{&quot;t&quot;:0.25,&quot;v&quot;:0.85},{&quot;t&quot;:0.4,&quot;v&quot;:0.38},{&quot;t&quot;:40.05,&quot;v&quot;:0.38},{&quot;t&quot;:40.45,&quot;v&quot;:0.85}]}]}"
       ></audio>
 
       <!-- Hinglish voiceover: local Kokoro-82M TTS (Apache-2.0), voice hm_omega -->
@@ -639,7 +639,7 @@
       <audio id="vo5" class="clip" src="assets/vo2/l5.m4a" data-start="20.55" data-duration="5.2" data-track-index="2" data-volume="1"></audio>
       <audio id="vo6" class="clip" src="assets/vo2/l6.m4a" data-start="25.95" data-duration="7.04" data-track-index="2" data-volume="1"></audio>
       <audio id="vo7" class="clip" src="assets/vo2/l7.m4a" data-start="33.35" data-duration="3.6" data-track-index="2" data-volume="1"></audio>
-      <audio id="vo8" class="clip" src="assets/vo2/l8.m4a" data-start="37.2" data-duration="3.43" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo8" class="clip" src="assets/vo2/l8.m4a" data-start="37.2" data-duration="2.73" data-track-index="2" data-volume="1"></audio>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
@@ -767,6 +767,7 @@
 
       // 8. End lockup — 37 to 41.5s
       enter("#se", 37.0);
+      tl.fromTo("#net", { opacity: 1 }, { opacity: 0.3, duration: 0.6, ease: "power1.out", immediateRender: false }, 37.0);
       tl.fromTo("#e-mark", { scale: 0, rotation: -120 }, { scale: 1, rotation: 0, duration: 0.55, ease: "back.out(1.8)" }, 37.0);
       tl.fromTo("#e-name", { opacity: 0, y: 50, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "power3.out" }, 37.2);
       tl.fromTo("#e-tri", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.out" }, 38.0);
