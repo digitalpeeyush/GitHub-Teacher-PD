@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <style>
+      /* Montserrat — SIL Open Font License 1.1 (assets/fonts/OFL-LICENSE.txt) */
+      @font-face {
+        font-family: "Montserrat";
+        font-weight: 700;
+        src: url("assets/fonts/montserrat-latin-700-normal.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Montserrat";
+        font-weight: 800;
+        src: url("assets/fonts/montserrat-latin-800-normal.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Montserrat";
+        font-weight: 900;
+        src: url("assets/fonts/montserrat-latin-900-normal.woff2") format("woff2");
+      }
+
+      :root {
+        --bg: #060816;
+        --bg-2: #101634;
+        --ink: #ffffff;
+        --muted: #b8c0e6;
+        --cyan: #22d3ee;
+        --violet: #8b5cf6;
+        --pink: #ec4899;
+        --saffron: #ff9933;
+        --green: #22c55e;
+        --card: rgba(16, 22, 52, 0.92);
+        --line: rgba(34, 211, 238, 0.45);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--bg);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        font-family: "Montserrat", sans-serif;
+        color: var(--ink);
+        background: radial-gradient(ellipse at 50% 40%, var(--bg-2) 0%, var(--bg) 72%);
+        overflow: hidden;
+      }
+      #net {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1080px;
+        height: 1920px;
+        opacity: 0.55;
+      }
+      .glow {
+        position: absolute;
+        width: 900px;
+        height: 900px;
+        border-radius: 50%;
+        filter: blur(140px);
+        opacity: 0.4;
+      }
+      #glow-a {
+        left: -260px;
+        top: -120px;
+        background: var(--violet);
+      }
+      #glow-b {
+        right: -260px;
+        bottom: -120px;
+        background: var(--cyan);
+      }
+      /* Content kept inside the centre 1080x1440 (3:4) area that the profile grid shows */
+      #content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 260px 70px;
+        gap: 30px;
+        text-align: center;
+      }
+      .grad {
+        background: linear-gradient(90deg, var(--cyan), var(--violet) 55%, var(--pink));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      #brand-row {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+      }
+      #mark {
+        width: 130px;
+        height: 130px;
+      }
+      #brand {
+        font-size: 120px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+      #brand span {
+        color: var(--cyan);
+      }
+      #coming {
+        padding: 12px 40px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        font-size: 44px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+      #iitf {
+        font-size: 172px;
+        font-weight: 900;
+        line-height: 0.95;
+        white-space: nowrap;
+        letter-spacing: -0.02em;
+      }
+      #iitf-full {
+        font-size: 46px;
+        font-weight: 800;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      #hall-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 900px;
+        padding: 34px 40px 38px;
+        border-radius: 44px;
+        background: var(--card);
+        border: 4px solid var(--line);
+        box-shadow: 0 0 80px rgba(34, 211, 238, 0.25);
+      }
+      #hall {
+        font-size: 176px;
+        font-weight: 900;
+        line-height: 1;
+        white-space: nowrap;
+      }
+      #when {
+        font-size: 50px;
+        font-weight: 900;
+        white-space: nowrap;
+      }
+      #when span {
+        color: var(--saffron);
+      }
+      #where {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      #pin {
+        width: 34px;
+        height: 44px;
+        flex: none;
+      }
+      #chips {
+        display: flex;
+        gap: 18px;
+      }
+      .chip {
+        padding: 16px 30px;
+        border-radius: 999px;
+        font-size: 38px;
+        font-weight: 900;
+        white-space: nowrap;
+      }
+      .chip.c1 {
+        background: linear-gradient(90deg, #0e7490, #1d4ed8);
+      }
+      .chip.c2 {
+        background: linear-gradient(90deg, var(--violet), var(--pink));
+      }
+      #platform {
+        font-size: 50px;
+        font-weight: 900;
+      }
+      #platform span {
+        color: var(--cyan);
+      }
+      #tagline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+      }
+      #tri {
+        display: flex;
+        width: 420px;
+        height: 12px;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      #tri div {
+        flex: 1;
+      }
+      #tag {
+        font-size: 48px;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="1"
+      data-width="1080"
+      data-height="1920"
+      data-no-timeline
+    >
+      <div id="glow-a" class="glow" data-layout-allow-overflow="true"></div>
+      <div id="glow-b" class="glow" data-layout-allow-overflow="true"></div>
+      <svg id="net" viewBox="0 0 1080 1920"></svg>
+
+      <div id="content">
+        <div id="brand-row">
+          <svg id="mark" viewBox="0 0 200 200">
+            <defs>
+              <linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#22d3ee" />
+                <stop offset="0.55" stop-color="#8b5cf6" />
+                <stop offset="1" stop-color="#ec4899" />
+              </linearGradient>
+            </defs>
+            <rect x="10" y="10" width="180" height="180" rx="48" fill="none" stroke="url(#markGrad)" stroke-width="12" />
+            <g stroke="#ffffff" stroke-width="7" stroke-linecap="round">
+              <path d="M60 140 L100 60 L140 140" fill="none" />
+              <path d="M76 110 H124" />
+            </g>
+            <circle cx="100" cy="60" r="12" fill="#22d3ee" />
+            <circle cx="60" cy="140" r="12" fill="#8b5cf6" />
+            <circle cx="140" cy="140" r="12" fill="#ec4899" />
+          </svg>
+          <div id="brand">Piyush<span>AI</span></div>
+        </div>
+        <div id="coming">AA RAHA HAI</div>
+        <div id="iitf" class="grad">IITF 2026</div>
+        <div id="iitf-full">India International Trade Fair</div>
+        <div id="hall-card">
+          <div id="hall" class="grad">HALL 14</div>
+          <div id="when"><span>19–23 November</span></div>
+          <div id="where">
+            <svg id="pin" viewBox="0 0 56 70">
+              <path d="M28 68 C28 68 4 40 4 26 A24 24 0 0 1 52 26 C52 40 28 68 28 68 Z" fill="#ff9933" />
+              <circle cx="28" cy="26" r="9" fill="#ffffff" />
+            </svg>
+            <div>Bharat Mandapam, New Delhi</div>
+          </div>
+        </div>
+        <div id="platform">Try our <span>JEE–NEET</span> AI Platform</div>
+        <div id="chips">
+          <div class="chip c1">AI Tutor</div>
+          <div class="chip c2">AI Scratchpad</div>
+        </div>
+        <div id="tagline">
+          <div id="tri"><div style="background: #ff9933"></div><div style="background: #ffffff"></div><div style="background: #22c55e"></div></div>
+          <div id="tag">AI Literacy <span class="grad">for All</span></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Same deterministic network as the reel (seeded LCG — no Math.random)
+      (function () {
+        const svg = document.getElementById("net");
+        const NS = "http://www.w3.org/2000/svg";
+        let seed = 20261114;
+        const rand = () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296;
+        const pts = [];
+        for (let i = 0; i < 46; i++) pts.push([40 + rand() * 1000, 40 + rand() * 1840]);
+        pts.forEach((p, i) =>
+          pts.forEach((q, j) => {
+            if (j <= i || Math.hypot(p[0] - q[0], p[1] - q[1]) >= 260) return;
+            const l = document.createElementNS(NS, "line");
+            l.setAttribute("x1", p[0]);
+            l.setAttribute("y1", p[1]);
+            l.setAttribute("x2", q[0]);
+            l.setAttribute("y2", q[1]);
+            l.setAttribute("stroke", "rgba(34,211,238,0.22)");
+            l.setAttribute("stroke-width", "2");
+            svg.appendChild(l);
+          }),
+        );
+        pts.forEach((p, i) => {
+          const c = document.createElementNS(NS, "circle");
+          c.setAttribute("cx", p[0]);
+          c.setAttribute("cy", p[1]);
+          c.setAttribute("r", 5 + (i % 3) * 2);
+          c.setAttribute("fill", i % 4 === 0 ? "#ec4899" : i % 2 ? "#22d3ee" : "#8b5cf6");
+          svg.appendChild(c);
+        });
+      })();
+    </script>
+  </body>
+</html>
